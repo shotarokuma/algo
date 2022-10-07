@@ -26,3 +26,25 @@ class Solution(object):
         
         helper(root)
         
+    def sample(self,root):
+      arr = []
+      def helper(node):
+        if not node:
+          return
+        arr.append(node)
+        helper(node.left)
+        helper(node.right)
+
+      helper(root)
+
+      dummy = TreeNode()
+      curr = dummy
+      for node in arr:
+        node.left = None
+        node.right = None
+        curr.right = node
+        curr = curr.right
+      
+      return dummy.right
+
+        
