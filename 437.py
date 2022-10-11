@@ -28,7 +28,7 @@ class Solution(object):
             
         return helper(root, targetSum)
 
-    def sample(self, root, targetSum):
+    def sample(self, root):
         def dfs(n , s):
           if not n:
             return 0
